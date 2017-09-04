@@ -21,4 +21,6 @@ public:
 
 	// Get pointer to controlled Tank (casted to ATank)
 	ATank* GetControlledTank() const;
+
+	ATank* GetPlayerTank() const;
 };

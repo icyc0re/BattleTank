@@ -19,6 +19,13 @@ public:
 	// Override BeginPlay inherited from AActor
 	virtual void BeginPlay() override;
 
+	// Override Tick inherited from AActor
+	virtual void Tick(float) override;
+
 	// Get pointer to controlled Tank (casted to ATank)
 	ATank* GetControlledTank() const;
+
+	// Start the tank moving the barrel so that a shot would hit where
+	// the crosshair intersects the world
+	void AimTowardsCrosshair();
 };

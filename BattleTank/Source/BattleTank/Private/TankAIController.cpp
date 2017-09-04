@@ -2,6 +2,9 @@
 
 #include "TankAIController.h"
 
+#include "Engine/World.h"
+#include "GameFramework/Actor.h"
+
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -15,9 +18,22 @@ void ATankAIController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("AI controlling tank: %s"), *(ControlledTank->GetName()))
 	}
+
+	ATank* PlayerTank = GetPlayerTank();
+	if (PlayerTank)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player tank: %s"), *(PlayerTank->GetName()))
+	}
 }
 
 ATank* ATankAIController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+}
+
+ATank* ATankAIController::GetPlayerTank() const
+{
+	APawn* PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
+
+	return PlayerPawn ? Cast<ATank>(PlayerPawn) : nullptr;
 }
