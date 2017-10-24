@@ -18,10 +18,4 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
-
-private:
-	// Get pointer to controlled Tank (casted to ATank)
-	ATank* GetControlledTank() const;
-
-	ATank* GetPlayerTank() const;
 };

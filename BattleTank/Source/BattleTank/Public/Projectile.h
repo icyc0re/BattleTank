@@ -27,6 +27,5 @@ public:
 	void LaunchProjectile(float Speed);
 
 protected:
-	UPROPERTY(EditAnywhere)
 	UProjectileMovementComponent* MovementComponent = nullptr;
 };

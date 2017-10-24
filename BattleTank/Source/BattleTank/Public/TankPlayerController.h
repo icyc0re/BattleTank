@@ -40,14 +40,14 @@ private:
 	bool GetLookVectorHitLocation(const FVector&, FVector&) const;
 
 	// Relative location of crosshair on the screen (X axis)
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CrosshairXLocation = 0.5;
 
 	// Relative location of crosshair on the screen (Y axis)
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CrosshairYLocation = 0.333;
 
 	// Max distance of the aiming linetrace
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000.0; // 1 -> 1cm
 };
